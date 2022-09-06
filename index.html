@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Dom</title>
+ 
+   
+ <style>
+
+  header {
+    border: 2px solid black;
+    text-align: center;
+  }
+
+  main {
+    margin-top: 20px;
+    border: 2px solid black;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  footer {
+    margin-top: 20px;
+    border: 2px solid black;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #footer-div {
+    width: 200px;
+    height: 100px;
+    background-color: brown;
+  }
+
+
+  
+
+ </style>
+   
+
+</head>
+
+<body>
+    <header>
+   
+        
+        
+
+         <h1 id="tittle">Merhaba</h1>
+
+       <button id="redbtn">Color</button>
+       <button class="textchange">Text</button>
+
+      
+
+    </header>
+   
+
+ <main>
+
+<img src="r1.jpg" id="img" width="500px" height="300px">
+<button class="next-picture">Next picture</button>
+
+ </main>
+
+
+
+
+ <footer>
+  <div id="footer-div"></div>
+  <button id="big" ondblclick="small();">Büyüt-Küçült</button>
+
+  <button class="border" onclick="border1();" ondblclick="border2()">Border</button>
+
+</footer>
+
+
+
+    <script>
+
+      //1. örnek yazıyı ve rengini değiştirme------------------------------
+        document.querySelector('.textchange').onclick=function() {
+            document.querySelector('#tittle').innerHTML="Frontend yazılım kursumuza hoşgeldiniz";
+        }
+   
+        document.getElementById('redbtn').onclick=function() {
+           document.getElementById('tittle').style.color="red";
+       }
+      
+    //2. örnek resmi değiştirme------------------------------------------
+     document.querySelector('.next-picture').onclick = function() {
+       
+            document.querySelector('#img').src="r2.jpg";
+     }
+
+
+     //3. örnek boyut-border-arka plan rengi değiştirme--------------------------------------------
+     document.getElementById('big').onclick=function() {
+           document.getElementById('footer-div').style.width="600px";
+           document.getElementById('footer-div').style.height="300px"
+       }
+
+       function small() {
+       document.getElementById('footer-div').style.width="200px";
+       document.getElementById('footer-div').style.height="100px";
+       }
+    
+
+      //  4. örnek border ekleme kaldırma---------------------------------------------------
+       function border1() {
+        document.querySelector('#footer-div').style.border="3px solid blue";
+       }
+       function border2() {
+        document.querySelector('#footer-div').style.border="0px";
+       }
+    
+      
+
+
+      
+   
+       </script>
+
+</body>
+
+
+
+</html>
